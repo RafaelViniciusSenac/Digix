@@ -1,26 +1,42 @@
-var car = [
-    {
-        id: 1,
-        nome: "Produto 1",
-        valor: "2900",
-        qtd: 2,
-        qtd_estoque: 10
-    },
-    {
-        id: 2,
-        nome: "Produto 2",
-        valor: "4900",
-        qtd: 1,
-        qtd_estoque: 5
-    },
-    {
-        id: 3,
-        nome: "Produto 3",
-        valor: "1900",
-        qtd: 3,
-        qtd_estoque: 20
-    }
-  ];
+var car = [ // Simula o carrinho
+  {
+      id: 1,
+      nome: "Produto 1",
+      valor: "2900",
+      qtd: 2,
+      qtd_estoque: 10
+  },
+  {
+      id: 2,
+      nome: "Produto 2",
+      valor: "4900",
+      qtd: 1,
+      qtd_estoque: 5
+  },
+  {
+      id: 3,
+      nome: "Produto 3",
+      valor: "1900",
+      qtd: 3,
+      qtd_estoque: 20
+  },
+  {
+      id: 4,
+      nome: "Produto 4",
+      valor: "3900",
+      qtd: 1,
+      qtd_estoque: 10
+  },
+  {
+      id: 5,
+      nome: "Produto 5 - muito bom",
+      valor: "5900",
+      qtd: 2,
+      qtd_estoque: 15
+  }
+];
+const qtdDigicoins = 10000;//Simula quantidade de digicoins
+
 function preencherCarrinho(carrinho) {
   car = carrinho;
   const cartItemsContainer = document.getElementById("cart-items");
@@ -32,40 +48,40 @@ function preencherCarrinho(carrinho) {
   let totalCarrinho = 0;
   let totalItens = 0;
 
-  car.forEach((item) => {
-    let valor = parseFloat(item.valor);
-    let qtd = parseInt(item.qtd);
-    let qtd_estoque = parseInt(item.qtd_estoque);
-    let totalProduto = qtd * valor;
+  car.forEach((item) => { // Para cada item no carrinho
+    let valor = parseFloat(item.valor); // passa o valor para float
+    let qtd = parseInt(item.qtd); // passa a quantidade para int
+    let qtdEstoque = parseInt(item.qtd_estoque); // passa a quantidade de estoque para int
+    let totalProduto = qtd * valor; 
     totalCarrinho += totalProduto;
     totalItens += qtd;
-    // cria elemento tr e adiciona class="row-wrapper"
     const itemRow = document.createElement("tr");
     itemRow.innerHTML = `
         <td data-label="Nome">${item.nome}</td>
         <td data-label="Qtd">
-          <input type="number" value="${qtd}" min="1" max="${
-      qtd_estoque + qtd
-    }" onchange="verificarValorMax(this);atualizarQuantidade('${item.id}', this.value)" class="quantidade-input">
+          <input type="number" value="${qtd}" min="1" max="${qtdEstoque + qtd}" onchange="verificarValorMax(this);atualizarQuantidade('${item.id}', this.value)">
         </td>
-        <td data-label="Total"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
+        <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
         <td data-label="Opções">
-          <button class="remove-button" onclick="removerItem('${item.id}')"><img src="img/remover.png"></button>
+          <button class="botao-remover" onclick="removerItem('${item.id}')"><img src="img/remover.png"></button>
         </td>
       `;
     cartItemsContainer.appendChild(itemRow);
   });
-
+  let botaoFinalizar = document.getElementById("botaoFinalizarPedido");
+  if(totalCarrinho > qtdDigicoins){
+    botaoFinalizar.disabled=true;
+  }else{
+    botaoFinalizar.disabled=false;
+  }
   cartTotalElement.textContent = totalCarrinho;
   cartQuantityElement.textContent = `${totalItens} itens`;
-
-  // Adiciona eventos para alterar a quantidade e remover itens
-
 }
 
 function atualizarQuantidade(id, novaQuantidade) {
-  // Atualiza a quantidade do item no carrinho
+  // Encontra o índice do item com o id fornecido
   const index = car.findIndex(item => item.id === parseInt(id));
+  // Verifica se o item foi encontrado
   if (index !== -1) {
     car[index].qtd = novaQuantidade;
     // Atualiza o localStorage
@@ -106,6 +122,11 @@ function verificarValorMax(input) {
     }
   }
 
+function finalizarPedido(){
+  alert("Finalizar pedido");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     preencherCarrinho(car);
 });
+
