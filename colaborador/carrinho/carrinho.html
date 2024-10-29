@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
+    <div id="menu-superior" class="menu-superior"></div>
     <div class="container">
         <div class="titulo">
             <div class="icone">
@@ -18,9 +19,9 @@
           <thead>
             <tr>
               <th><img src="img/produto.png" alt="produtos"> Produto <img src="img/sort.png" alt="sort"></th>
-              <th>Qtd</th>
-              <th>Valor Total</th>
-              <th>Ações</th>
+              <th width="80px">Qtd</th>
+              <th width="80px">Valor</th>
+              <th width="50px">Ações</th>
             </tr>
           </thead>
           <tbody id="cart-items">
@@ -29,8 +30,8 @@
         </table>
       </div>
       <div class="total">
-        <h4>Total de Digicons: <span id="cart-total">0</span></h4>
-        <button id="bt-finalizar-compra" class="checkout-button" onclick="finalizarCompra()">Finalizar Pedido</button>
+        <h4>Total de Digicoins: <span id="cart-total">0</span></h4>
+        <button id="botaoFinalizarPedido" class="checkout-button" onclick="finalizarPedido()">Finalizar Pedido</button>
       </div>
       <script src="carrinho.js"></script>
 </body>
