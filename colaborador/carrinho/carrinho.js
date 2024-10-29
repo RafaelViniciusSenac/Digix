@@ -4,50 +4,54 @@ var car = [ // Simula o carrinho
       nome: "Produto 1",
       valor: "2900",
       qtd: 2,
-      qtd_estoque: 10
+      qtd_estoque: 2,
+      tipo_fisico: true
   },
   {
       id: 2,
       nome: "Produto 2",
       valor: "4900",
       qtd: 1,
-      qtd_estoque: 5
+      qtd_estoque: 5,
+      tipo_fisico: false
   },
   {
       id: 3,
       nome: "Produto 3",
       valor: "1900",
       qtd: 3,
-      qtd_estoque: 20
+      qtd_estoque: 20,
+      tipo_fisico: false
   },
   {
       id: 4,
       nome: "Produto 4",
       valor: "3900",
       qtd: 1,
-      qtd_estoque: 10
+      qtd_estoque: 10,
+      tipo_fisico: false
   },
   {
       id: 5,
       nome: "Produto 5 - muito bom",
       valor: "5900",
       qtd: 2,
-      qtd_estoque: 15
+      qtd_estoque: 15,
+      tipo_fisico: true
   }
 ];
+let ascending = true;
 const qtdDigicoins = 10000;//Simula quantidade de digicoins
 
 function preencherCarrinho(carrinho) {
   car = carrinho;
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotalElement = document.getElementById("cart-total");
-  const cartQuantityElement = document.querySelector(".tex-qtd-itens");
 
   cartItemsContainer.innerHTML = ""; // Limpa os itens existentes
 
   let totalCarrinho = 0;
   let totalItens = 0;
-
   car.forEach((item) => { // Para cada item no carrinho
     let valor = parseFloat(item.valor); // passa o valor para float
     let qtd = parseInt(item.qtd); // passa a quantidade para int
@@ -59,7 +63,7 @@ function preencherCarrinho(carrinho) {
     itemRow.innerHTML = `
         <td data-label="Nome">${item.nome}</td>
         <td data-label="Qtd">
-          <input type="number" value="${qtd}" min="1" max="${qtdEstoque + qtd}" onchange="verificarValorMax(this);atualizarQuantidade('${item.id}', this.value)">
+          <input type="number" value="${qtd}" min="1" max="${qtdEstoque}" onchange="verificarValorMax(this);atualizarQuantidade('${item.id}', this.value)">
         </td>
         <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
         <td data-label="Opções">
@@ -75,7 +79,6 @@ function preencherCarrinho(carrinho) {
     botaoFinalizar.disabled=false;
   }
   cartTotalElement.textContent = totalCarrinho;
-  cartQuantityElement.textContent = `${totalItens} itens`;
 }
 
 function atualizarQuantidade(id, novaQuantidade) {
@@ -112,15 +115,31 @@ function removerItem(id) {
   }
 
 function verificarValorMax(input) {
-    var max = parseInt(input.max);
-    var min = parseInt(input.min);
-    if (input.value > max) {
-      input.value = max;
-    }
-    if (input.value < min) {
-      input.value = min;
-    }
+  var max = parseInt(input.max);
+  var min = parseInt(input.min);
+  if (input.value > max) {
+    input.value = max;
   }
+  if (input.value < min) {
+    input.value = min;
+  }
+}
+
+function ordenarItens(element, propriedade) {
+  if (element.className==='sort-desc') {
+    element.className = 'sort-asc';
+    car.sort((a, b) => {
+        return a[propriedade].localeCompare(b[propriedade])
+    });
+  } else {
+    element.className = 'sort-desc';
+    car.sort((a, b) => {
+      return b[propriedade].localeCompare(a[propriedade]);
+    });
+  }
+  console.log(car);
+  preencherCarrinho(car);
+}
 
 function finalizarPedido(){
   alert("Finalizar pedido");
