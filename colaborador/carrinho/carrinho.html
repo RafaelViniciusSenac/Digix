@@ -13,19 +13,18 @@
             <div class="icone">
                 <img src="img/carrinho.png" alt="Carrinho">
             </div>
-            Carrinho de Compras (<span class="tex-qtd-itens"></span>)
+            Carrinho de Compras
         </div>
         <table>
           <thead>
             <tr>
-              <th><img src="img/produto.png" alt="produtos"> Produto <img src="img/sort.png" alt="sort"></th>
+              <th><img src="img/produto.png" alt="produtos"> Produto <img onclick="ordenarItens(this,'nome')" class="sort-asc" src="img/sort.png" alt="sort"></th>
               <th width="80px">Qtd</th>
-              <th width="80px">Valor</th>
+              <th width="80px">Valor <img onclick="ordenarItens(this,'valor')" class="sort-asc" src="img/sort.png" alt="sort"></th>
               <th width="50px">Ações</th>
             </tr>
           </thead>
           <tbody id="cart-items">
-            <!-- Itens do carrinho serão adicionados aqui -->
           </tbody>
         </table>
       </div>
