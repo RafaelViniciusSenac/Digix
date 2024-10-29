@@ -9,17 +9,18 @@
 <body>
     <div class="container">
         <div class="titulo">
-            <div class="carrinho-container">
-                <img src="img/carrinho.png" alt="Carrinho de Compras" class="carrinho">
+            <div class="icone">
+                <img src="img/carrinho.png" alt="Carrinho">
             </div>
-            Carrinho de Compras <span class="tex-qtd-itens"></span>
+            Carrinho de Compras (<span class="tex-qtd-itens"></span>)
         </div>
         <table>
           <thead>
             <tr>
-              <th>Produto</th>
+              <th><img src="img/produto.png" alt="produtos"> Produto <img src="img/sort.png" alt="sort"></th>
               <th>Qtd</th>
-              <th>Valor</th>
+              <th>Valor Total</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody id="cart-items">
@@ -28,8 +29,9 @@
         </table>
       </div>
       <div class="total">
-        <h2>Total de Digicons: <span id="cart-total">0</span></h2>
-        <button id="bt-continuar-comprando" class="checkout-button" onclick="abrirPagina('produtos.html')" disabled>Continuar Comprando</button> <button id="bt-finalizar-compra" class="checkout-button" onclick="finalizarCompra()" disabled>Finalizar Pedido</button>
+        <h4>Total de Digicons: <span id="cart-total">0</span></h4>
+        <button id="bt-finalizar-compra" class="checkout-button" onclick="finalizarCompra()">Finalizar Pedido</button>
       </div>
+      <script src="carrinho.js"></script>
 </body>
 </html>
