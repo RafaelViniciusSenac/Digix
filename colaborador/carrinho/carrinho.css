@@ -42,10 +42,6 @@ body{
     flex-direction: row;
     font-weight: bold;
 }
-.tex-qtd-itens{
-    font-weight: normal;
-    color:var(--ciano);
-}
 
 .icone{
     width: 18px;
@@ -55,6 +51,14 @@ body{
 .icone img{
     width: 100%;
 }
+.sort-desc {
+  transform: none;
+  cursor: pointer;
+}
+.sort-asc {
+  transform: scale(1, -1);
+  cursor: pointer;
+}
 table {
     margin-top: 30px;
     border-collapse: separate; 
@@ -63,10 +67,12 @@ table {
     width: 100%;
     min-width: 600px;
   }
+
 th img{
     width: 16px;
-    height: 16px;
     margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 1px;
 }
 th, td {
     padding-top: 5px;
