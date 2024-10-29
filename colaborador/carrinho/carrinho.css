@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    margin-top: 100px;
+    width: 600px;
+}
+.carrinho-container img{
+    width: 18px;
+}
+.carrinho-container {
+    position: relative;
+    display: inline-block;
+}
+.carrinho-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Espessura do sublinhado */
+    background-color: rgb(248, 135, 6); /* Cor do sublinhado */
+}
+.tabela{
+    padding: 50px;
+}
