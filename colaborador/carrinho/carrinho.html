@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <div class="carrinho-container">
+                <img src="img/carrinho.png" alt="Carrinho de Compras" class="carrinho">
+            </div>
+            Carrinho de Compras <span class="tex-qtd-itens"></span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Qtd</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Itens do carrinho serão adicionados aqui -->
+          </tbody>
+        </table>
+      </div>
+      <div class="total">
+        <h2>Total de Digicons: <span id="cart-total">0</span></h2>
+        <button id="bt-continuar-comprando" class="checkout-button" onclick="abrirPagina('produtos.html')" disabled>Continuar Comprando</button> <button id="bt-finalizar-compra" class="checkout-button" onclick="finalizarCompra()" disabled>Finalizar Pedido</button>
+      </div>
+</body>
+</html>
