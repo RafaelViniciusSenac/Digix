@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.produtos {
+    margin: 50px;
+    padding: 50px;
+    background-color: rgb(139, 112, 112);
+}
+
+.produtosDigix {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.imagensDigix {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.imgD {    
+    border: solid 5px black;
+    width: 250px;
+    height: 250px;
+}
