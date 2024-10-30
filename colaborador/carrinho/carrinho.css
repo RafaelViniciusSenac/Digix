@@ -134,7 +134,6 @@ td input {
 }
 
 .checkout-button:hover {
-  border: 1px solid var(--magenta);
   background-color: var(--branco);
   color: var(--preto);
 }
