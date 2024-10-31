@@ -1,0 +1,18 @@
+:root {
+    --laranja: #FC671D;
+    --laranja-rgb: 252, 103, 29;
+    --magenta: #D34AF4;
+    --magenta-rgb: 211, 74, 244;
+    --cinza: #faf6f7;
+    --cinza-rgb: 250, 246, 247;
+    --cinza-escuro: #888;
+    --cinza-escuro-rgb: 136, 136, 136;
+    --ciano: #0BC0D3;
+    --ciano-rgb: 11, 192, 211;
+    --base: #2c006a;
+    --base-rgb: 44, 0, 106;
+    --branco: #fff;
+    --branco-rgb: 255, 255, 255;
+    --preto: #000;
+    --preto-rgb: 0, 0, 0;
+}
