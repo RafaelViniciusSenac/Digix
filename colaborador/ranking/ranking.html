@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="ranking.css">
+</head>
+<body>
+    <div id="menu-superior" class="menu-superior"></div>
+    <div class="container">
+        <div class="titulo">
+            <div class="icone">
+                <img src="img/carrinho.png" alt="Carrinho">
+            </div>
+            Ranking
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th width="120px"><img src="img/posicao.png" alt="posicao"> Posicao <img onclick="ordenarItens(this,'posicao')" class="sort-asc" src="img/sort.png" alt="sort"></th>
+              <th>Nome <img onclick="ordenarItens(this,'nome')" class="sort-asc" src="img/sort.png" alt="sort"></th>
+              <th width="50px">Valores</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+          </tbody>
+        </table>
+      </div>
+      <script src="ranking.js"></script>
+</body>
+</html>
