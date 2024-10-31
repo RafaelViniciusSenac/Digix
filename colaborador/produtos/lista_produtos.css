@@ -3,6 +3,19 @@
     padding: 0;
 }
 
+:root {
+    --laranja: #FC671D;
+    --magenta: #D34AF4;
+    --cinza: #faf6f7;
+    --cinza-escuro:#888;
+    --ciano: #0BC0D3;
+    --base: #2c006a;
+    --branco: #fff;
+    --preto: #000;
+    --sombra-base:rgba(44, 0, 106, 0.4);
+    --sombra-preta:rgba(0, 0, 0, 0.4);
+  }
+
 body {
     font-family: "Open Sans";
     display: flex;
@@ -12,7 +25,7 @@ body {
 
 .search {
     display: flex;
-    background-color: white;
+    background-color: var(--branco);
     border: black solid 2px;
     border-radius: 20px;
 }
