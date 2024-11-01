@@ -21,7 +21,7 @@ async function showPopup(conteudo, titulo = ' ') {
     imgClosed.className = "popup-closed";
     imgClosed.src = "img/closed.png";
     imgClosed.alt = "Fechar";
-    imgClosed.setAttribute("onclick", "hidePopup()");
+    imgClosed.addEventListener("click", hidePopup);
     popupBody.className = "popup-body";
 
     // Adiciona os elementos ao DOM
@@ -64,4 +64,10 @@ function hidePopup() {
   if (overlay) overlay.style.display = "none";
   document.body.classList.remove('no-scroll');
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        hidePopup();
+    }
+});
 
