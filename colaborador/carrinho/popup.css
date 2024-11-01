@@ -31,12 +31,11 @@ body.no-scroll {
 .popup {
     background-color: var(--branco);
     max-width: 600px;
-    width: 100%;
     margin: 20px; /* Espaço para o scroll */
     border-radius: 20px;
     border: 1px solid var(--cinza);
     box-shadow: 0 10px 20px rgba(var(--preto-rgb), 0.1), 0 6px 6px rgba(var(--preto-rgb), 0.1);
-    padding: 20px;
+    padding: 10px;
     position: relative;
 }
 /* posicao do botao de fechar do lado direito */
@@ -44,6 +43,7 @@ body.no-scroll {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 .popup-titulo {
     flex-grow: 1;
@@ -51,14 +51,13 @@ body.no-scroll {
     color: var(--base);
     font-weight: bold;
     font-size: 25px;
-    margin: 10px;
 }
 .popup-closed {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     float: right;
     cursor: pointer;
-    margin: 10px;
+    margin-left: 10px;
 }
 .popup-closed:hover {
     opacity: 0.7;
