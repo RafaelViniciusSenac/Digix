@@ -1,29 +1,41 @@
-function fecharDialog() {
-    document.getElementById("popup").close();
+async function showDialog() {
+    await loadCSS('dialog.css');
+
+    // Seleciona o dialog
+    const dialog = document.getElementById('popupDialog');
+
+    // Mostra o dialog
+    dialog.showModal();
+    document.body.classList.add('no-scroll');
 }
 
-function abrirDialog() {
-    document.getElementById("popup").showModal();
-}
+async function loadCSS(cssUrl) {
+    // Verifica se o CSS já está carregado
+    if (!document.querySelector(`link[href="${cssUrl}"]`)) {
+        // Cria um novo elemento link
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cssUrl;
 
-function desativarEnderecoForm(acao) {
-    const enderecoForm = document.getElementById('endereco');
-    if (acao) {
-        console.log('desativar');
-        const camposForms = enderecoForm.querySelectorAll('input, select');
-        [].forEach.call(camposForms, function (el) {
-            el.setAttribute('disabled', 'disabled');
+        // Adiciona o link ao head do documento
+        document.head.appendChild(link);
+
+        // Espera o CSS ser carregado
+        await new Promise((resolve) => {
+            link.onload = resolve;
         });
-        enderecoForm.classList.remove('form-endereco-ativo');
-        enderecoForm.classList.add('form-endereco-desativado');
-    } else {
-        console.log('ativar');
-        // ativa inputs e selects
-        const camposForms = enderecoForm.querySelectorAll('input, select');
-        [].forEach.call(camposForms, function (el) {
-            el.removeAttribute('disabled');
-        });
-        enderecoForm.classList.remove('form-endereco-desativado');
-        enderecoForm.classList.add('form-endereco-ativo');
     }
-  } 
+}
+
+function hideDialog() {
+    const dialog = document.getElementById('popupDialog');
+    if (dialog) dialog.close();
+    document.body.classList.remove('no-scroll');
+}
+
+// Fechar o popup com a tecla Esc
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        hideDialog();
+    }
+});
