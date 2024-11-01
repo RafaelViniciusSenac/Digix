@@ -7,24 +7,24 @@
     --laranja: #FC671D;
     --magenta: #D34AF4;
     --cinza: #faf6f7;
-    --cinza-escuro:#888;
+    --cinza-escuro: #888;
     --ciano: #0BC0D3;
     --base: #2c006a;
     --branco: #fff;
     --preto: #000;
-    --sombra-base:rgba(44, 0, 106, 0.4);
-    --sombra-preta:rgba(0, 0, 0, 0.4);
-  }
+    --sombra-base: rgba(44, 0, 106, 0.4);
+    --sombra-preta: rgba(0, 0, 0, 0.4);
+}
 
 body {
     font-family: "Open Sans";
     display: flex;
     justify-content: center;
-
 }
 
 .search {
     display: flex;
+    align-items: center;
     background-color: var(--branco);
     border: black solid 2px;
     border-radius: 20px;
@@ -32,14 +32,15 @@ body {
 
 .searchBar {
     border-radius: 30px;
-    width: 300px;
+    width: 400px;
     border: none;
     padding: 10px;
+    font-size: 25px;
 }
 
 .busca {
     width: 40px;
-    height: 40px;    
+    height: 40px;
 }
 
 .searchBar:focus {
@@ -47,9 +48,9 @@ body {
 }
 
 .produtos {
-    margin: 100px;
+    margin: 0 auto;
     padding: 100px;
-    background-color: rgb(250, 246, 247);
+    background-color: var(--cinza);
 }
 
 .produtosDigix {
@@ -63,15 +64,15 @@ body {
     height: 0;
     top: 273px;
     left: 375px;
-    border: 2px black solid;
+    border: 2px var(--laranja) solid;
 }
 
 
-.imagensDigix{
+.imagensDigix {
     display: grid;
     grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(2, 250px);
-    gap: 20px;
+    gap: 60px;
     margin-bottom: 50px;
     margin-top: 40px;
 }
@@ -80,24 +81,49 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 250px);
     grid-template-rows: repeat(1, 250px);
-    gap: 20px;
+    gap: 60px;
     margin-bottom: 50px;
     margin-top: 40px;
 }
 
-.produtosEmGeral{
+.produtosEmGeral {
     display: grid;
     grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(1, 250px);
-    gap: 20px;
+    gap: 60px;
     margin-bottom: 50px;
     margin-top: 40px;
 }
 
-.imgD, .imgC, .imgG {
-    border: solid 5px black;
+.imgD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 5px var(--preto);
     width: 230px;
     height: 230px;
     padding: 10px;
     border-radius: 40px;
+}
+
+.produtos .imagensP {
+    width: 100px;
+    height: auto;
+}
+
+.cardProdutos {
+    width: 500px;
+    height: 550px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.cardProdutos .NProduto {
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--preto);
+}
+
+.cardProdutos .preco {
+    color: #2c006a;
 }
