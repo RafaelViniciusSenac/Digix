@@ -20,7 +20,7 @@ function desativarEnderecoForm(acao) {
     }
   } 
   
-  function criarPopup(){
+  function abrirPopup(){
     const titulo = 'Finalizar Pedido';
     const body = `<form class="form"> 
       <label class="input-label">Selecione o tipo de entrega</label>
