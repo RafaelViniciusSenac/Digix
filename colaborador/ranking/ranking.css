@@ -74,14 +74,23 @@
       vertical-align: middle;
       margin-bottom: 1px;
   }
+  .posicao1{
+    height:50px;
+  }
+
   th, td {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: 15px;
+      padding-bottom: 15px;
       padding-left: 20px;
       text-align: left;
       font-size: 16px;
     }
-  
+
+  .posicao1-tamanho-fonte{
+    font-size: calc(1em + 5px);
+    font-weight: bold;
+  }
+
   tbody tr {
     border-radius: 10px;
     box-shadow: 10px 4px 8px var(--sombra-base) /* Desloca a sombra 10px para a direita */
@@ -170,6 +179,9 @@
       border: none;
       position: relative;
       padding-left: 50%;
+    }
+    .posicao1{
+      height:100%;
     }
   
     td:before {
