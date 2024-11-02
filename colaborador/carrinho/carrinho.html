@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
+    <link rel="stylesheet" href="../../assets/css/cores.css">
     <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
@@ -18,21 +19,23 @@
         <table>
           <thead>
             <tr>
-              <th><img src="img/produto.png" alt="produtos"> Produto <img onclick="ordenarItens(this,'nome')" class="sort-asc" src="img/sort.png" alt="sort"></th>
-              <th width="80px">Qtd</th>
-              <th width="80px">Valor <img onclick="ordenarItens(this,'valor')" class="sort-asc" src="img/sort.png" alt="sort"></th>
-              <th width="50px">Ações</th>
+              <th><img src="img/produto.png" alt="produtos"> Produto <img id="bt-ordenar" data-valor="nome" class="sort-asc" src="img/sort.png" alt="sort"></th>
+              <th width="100px">Qtd</th>
+              <th width="100px">Valor <img id="bt-ordenar" data-valor="valor" class="sort-asc" src="img/sort.png" alt="sort"></th>
+              <th width="80px">Ações</th>
             </tr>
           </thead>
-          <tbody id="cart-items">
+          <tbody id="items-grid">
             
           </tbody>
         </table>
       </div>
       <div class="total">
-        <h4>Total de Digicoins: <span id="cart-total">0</span></h4>
+        <h4>Total de Digicoins: <span id="valorTotal">0</span></h4>
         <button id="botaoFinalizarPedido" class="checkout-button" onclick="finalizarPedido()">Finalizar Pedido</button>
       </div>
-      <script src="carrinho.js"></script>
+      <script type="module" src="carrinho.js"></script>
+      <script src="../../assets/js/colaborador/popup.js"></script>
+      <script src="finalizar_compra.js"></script>
 </body>
 </html>
