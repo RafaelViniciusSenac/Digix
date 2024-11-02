@@ -1,4 +1,4 @@
-var car = [ // Simula o carrinho
+var ran = [ // Simula o ranking
   {
       id: 1,
       posicao: 1,
@@ -33,20 +33,27 @@ var car = [ // Simula o carrinho
 let ascending = true;
 const qtdDigicoins = 10000;//Simula quantidade de digicoins
 
-function preencherCarrinho(carrinho) {
-  car = carrinho;
+function preencherRanking(ranking) {
+  ran = ranking;
   const cartItemsContainer = document.getElementById("cart-items");
 
   cartItemsContainer.innerHTML = ""; // Limpa os itens existentes
 
-  car.forEach((item) => { // Para cada item no carrinho
-    let valor = parseFloat(item.valor); // passa o valor para float
+  ran.forEach((item) => { // Para cada item do ranking
+    let valor = '<span class="cor-moeda">D$</span> <span class="cor-valor">' + parseFloat(item.valor) + '</span>'; // passa o valor para float
     let posicao = parseInt(item.posicao); // passa a quantidade para int
+    let nome = item.nome;
     const itemRow = document.createElement("tr");
+    if (posicao===1){
+      itemRow.className = "posicao1"
+      posicao = `<span class="posicao1-tamanho-fonte">${posicao}</span>`;
+      nome = `<span class="posicao1-tamanho-fonte">${nome}</span>`;
+      valor = `<span class="posicao1-tamanho-fonte">${valor}</span>`;
+    }
     itemRow.innerHTML = `
-        <td data-label="Posicao">${item.posicao}</td>
-        <td data-label="Nomes">${item.nome}</td>
-        <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${item.valor}</span></td>
+        <td data-label="Posicao">${posicao}</td>
+        <td data-label="Nomes">${nome}</td>
+        <td data-label="Valor">${valor}</td>
       `;
     cartItemsContainer.appendChild(itemRow);
   });
@@ -54,39 +61,39 @@ function preencherCarrinho(carrinho) {
 
 function removerItem(id) {
     // Encontra o índice do item com o id fornecido
-    const index = car.findIndex(item => item.id === parseInt(id));
+    const index = ran.findIndex(item => item.id === parseInt(id));
     
     // Verifica se o item foi encontrado
     if (index !== -1) {
       // Remove o item do array
-      car.splice(index, 1);
+      ran.splice(index, 1);
       
       // Atualiza o localStorage
-      localStorage.setItem("cart", JSON.stringify(car));
+      localStorage.setItem("cart", JSON.stringify(ran));
       
-      // Recalcula e atualiza o carrinho
-      preencherCarrinho(car);
+      // Recalcula e atualiza o ranking
+      preencherCarrinho(ran);
       
-      //syncLocalCartToServer(car); // Se necessário
+      //syncLocalCartToServer(ran); // Se necessário
     }
   }
 
 function ordenarItens(element, propriedade) {
   if (element.className==='sort-desc') {
     element.className = 'sort-asc';
-    car.sort((a, b) => {
+    ran.sort((a, b) => {
         return a[propriedade].localeCompare(b[propriedade])
     });
   } else {
     element.className = 'sort-desc';
-    car.sort((a, b) => {
+    ran.sort((a, b) => {
       return b[propriedade].localeCompare(a[propriedade]);
     });
   }
-  console.log(car);
-  preencherCarrinho(car);
+  console.log(ran);
+  preencherRanking(ran);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    preencherCarrinho(car);
+    preencherRanking(ran);
 });
