@@ -26,14 +26,14 @@ class Grid {
       });
   
       // Adiciona os eventos após preencher a grid
-      this.addEventListeners();
+      this.addEventosGrid();
       
       if (this.config.atualizarTotal) {
         this.config.atualizarTotal();
       }
     }
   
-    addEventListeners() {
+    addEventosGrid() {
       this.listaGrid.forEach((item) => {
         const inputQtd = document.querySelector(`input[data-id="${item.id}"]`);
         const botaoRemover = document.querySelector(`button[data-id="${item.id}"]`);
