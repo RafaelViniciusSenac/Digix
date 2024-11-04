@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+}
+
+.menuColaborador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+    box-shadow: 10px 4px 8px rgba(0,0,0,0.4);
+    background-color: white;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+a:hover{
+    color: #fc671d
+}
+
+.logo{
+    width: 150px;
+}
+
+.perfilColaborador{
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.userInfo{
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.saldo{
+    color: #0BC0D3;
+}
+
+.digicoin{
+    color: #fc671d
+}
+
+.iconeUsuario{
+    width: 50px;
+    height: 50px;
+}
+
+.sino{
+    width: 30px;
+    height: 30px;
+}
+
+.flecha{
+    width: 30px;
+    height: 18px;
+}
+
+.displayOff{
+    display: none;
+}
+
+.displayOn{
+    display: block;
+}
+
+.sino:hover{
+    cursor: pointer;
+}
+
+.flecha:hover{
+    cursor: pointer;
+}
+
+.flechaCima{
+    width: 30px;
+    height: 18px;
+}
+
+.flechaCima:hover{
+    cursor: pointer;
+}
+
