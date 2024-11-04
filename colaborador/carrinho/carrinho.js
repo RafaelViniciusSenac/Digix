@@ -1,4 +1,4 @@
-import Grid from './grid.js';
+import Grid from './js/grid.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const grid = [ // Simula o carrinho
@@ -44,6 +44,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  const config = {
+    idGrid: "itensGrid", // ID do contêiner onde a grid será renderizada
+    idSortBotao: "#btOrdenar", // Id do Seletor dos botões de ordenação
+    idInputBusca: "#campoBusca", // Id do Seletor do campo de busca
+    idPaginacao: "paginacao", // ID do contêiner de paginação
+    itensPorPagina: 15, // Quantidade de itens por pagina
+    formatarGrid: (item) => {
+      let gridRow = `
+        <td data-label="Nome">${lista.nome}</td>
+        <td data-label="Qtd">
+          <input type="number" value="${qtd}" min="1" max="${qtdEstoque}" data-id="${lista.id}">
+        </td>
+        <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
+        <td data-label="Opções">
+          <button class="botao-remover" data-id="${lista.id}"><img src="img/remover.png"></button>
+        </td>
+      `;
+      return gridRow;
+    },
+    addEventos: null,
+    atualizarTotal: null
+  };
+  const outraGrid = new Grid(grid, config);
+  
   const config = {
     containerId: "items-grid",
     sortButtonSelector: "#bt-ordenar",
