@@ -47,46 +47,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const config = {
     idGrid: "itensGrid", // ID do contêiner onde a grid será renderizada
     idSortBotao: "#btOrdenar", // Id do Seletor dos botões de ordenação
-    idInputBusca: "#campoBusca", // Id do Seletor do campo de busca
-    idPaginacao: "paginacao", // ID do contêiner de paginação
+    //idInputBusca: "#campoBusca", // Id do Seletor do campo de busca
+    //idPaginacao: "paginacao", // ID do contêiner de paginação
     itensPorPagina: 15, // Quantidade de itens por pagina
     formatarGrid: (item) => {
+      let valor = parseFloat(item.valor); // passa o valor para float
+      let qtd = parseInt(item.qtd); // passa a quantidade para int
+      let qtdEstoque = parseInt(item.qtd_estoque); // passa a quantidade de estoque para int
+      let totalProduto = qtd * valor;
       let gridRow = `
-        <td data-label="Nome">${lista.nome}</td>
-        <td data-label="Qtd">
-          <input type="number" value="${qtd}" min="1" max="${qtdEstoque}" data-id="${lista.id}">
-        </td>
+        <td data-label="Produto">${item.nome}</td>
+        <td data-label="Qtd"><input type="number" value="${qtd}" min="1" max="${qtdEstoque}" data-id="${item.id}"></td>
         <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
-        <td data-label="Opções">
-          <button class="botao-remover" data-id="${lista.id}"><img src="img/remover.png"></button>
-        </td>
+        <td data-label="Ações"><button class="botao-remover" data-id="${item.id}"><img src="img/remover.png"></button></td>
       `;
       return gridRow;
     },
-    addEventos: null,
-    atualizarTotal: null
-  };
-  const outraGrid = new Grid(grid, config);
-  
-  const config = {
-    containerId: "items-grid",
-    sortButtonSelector: "#bt-ordenar",
-    formatarGrid: (lista) => {
-      let valor = parseFloat(lista.valor); // passa o valor para float
-      let qtd = parseInt(lista.qtd); // passa a quantidade para int
-      let qtdEstoque = parseInt(lista.qtd_estoque); // passa a quantidade de estoque para int
-      let totalProduto = qtd * valor; 
-      let gridRow = `
-        <td data-label="Nome">${lista.nome}</td>
-        <td data-label="Qtd">
-          <input type="number" value="${qtd}" min="1" max="${qtdEstoque}" data-id="${lista.id}">
-        </td>
-        <td data-label="Valor"><span class="cor-moeda">D$</span> <span class="cor-valor">${totalProduto}</span></td>
-        <td data-label="Opções">
-          <button class="botao-remover" data-id="${lista.id}"><img src="img/remover.png"></button>
-        </td>
-      `;
-      return gridRow;
+    addEventosGrid: (listaGrid,grid) => {
+      listaGrid.forEach((item) => {
+        const inputQtd = document.querySelector(`input[data-id="${item.id}"]`);
+        const botaoRemover = document.querySelector(`button[data-id="${item.id}"]`);
+        if (inputQtd) {
+          inputQtd.addEventListener('change', (event) => {
+            verificarValorMaxInput(event.target);
+            grid.atualizarQtdItensGrid(item.id, event.target.value);
+          });
+        }
+        if (botaoRemover) {
+          botaoRemover.addEventListener('click', () => {
+            grid.removerItensGrid(item.id);
+          });
+        }
+      });
     },
     atualizarTotal: () => {
       let valorTotalCarrinho = 0;
@@ -106,6 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
       valorTotal.textContent = valorTotalCarrinho;
     }
   };
-
   const carrinho = new Grid(grid, config);
+
 });
