@@ -19,6 +19,7 @@
 body {
     font-family: "Open Sans";
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -50,8 +51,8 @@ body {
 
 .produtos {
     margin: 0 auto;
-    padding: 100px;
-    background-color: var(--branco);
+    padding-top: 70px;
+    
 }
 
 .produtosDigix {
@@ -155,11 +156,13 @@ body {
 }
 
 .cardProdutos .preco p{
+    font-weight: bold;
     padding-right: 10px;
     color: var(--laranja);
 }
 
-.cardProdutos .preco span{
+.cardProdutos .preco span {
+    font-weight: bold;
     color: var(--ciano);
 }
 
