@@ -52,7 +52,7 @@ body {
 .produtos {
     margin: 0 auto;
     padding-top: 70px;
-    
+
 }
 
 .produtosDigix {
@@ -80,7 +80,7 @@ body {
 
 .imagensCampanha {
     display: grid;
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(1, 250px);
     gap: 60px;
     margin-bottom: 50px;
@@ -100,29 +100,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 5px var(--preto);
-    width: 230px;
-    height: 230px;
+    border: solid 4px var(--preto);
+    width: 240px;
+    height: 240px;
     padding: 10px;
     border-radius: 40px;
+    overflow: hidden;
+    transition: 0.2s;
 }
 
 .imgD button {
     border: none;
     background: var(--branco);
-    transition: 0.2s;
 }
 
-.imgD button:hover {
-    scale: 1.2; 
+
+.imgD:hover {
+    scale: 1.2;
 }
 
 .produtos .imagensP {
-    width: 120px;
+    width: 130px;
     height: auto;
 }
 
-.cardProdutos {
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#cardProdutos {
     text-align: center;
     width: 500px;
     height: 550px;
@@ -130,43 +147,43 @@ body {
     border-radius: 20px;
 }
 
-.cardProdutos .NProduto {
+#cardProdutos .NProduto {
     padding: 15px;
     font-size: 25px;
     font-weight: bold;
     color: var(--preto);
 }
 
-.cardProdutos .imagemCard {
+#cardProdutos .imagemCard {
     display: flex;
     justify-content: center;
 }
 
-.cardProdutos .ImProduto {
+#cardProdutos .ImProduto {
     width: 230px;
     height: 230px;
     padding: 50px 0 50px 0;
 }
 
-.cardProdutos .preco {
+#cardProdutos .preco {
     display: flex;
     justify-content: center;
     font-size: 30px;
     margin: 5px 0 10px;
 }
 
-.cardProdutos .preco p{
+#cardProdutos .preco p {
     font-weight: bold;
     padding-right: 10px;
     color: var(--laranja);
 }
 
-.cardProdutos .preco span {
+#cardProdutos .preco span {
     font-weight: bold;
     color: var(--ciano);
 }
 
-.cardProdutos .topo {
+#cardProdutos .topo {
     display: flex;
     justify-content: space-between;
     padding: 15px 15px 0 0;
@@ -189,7 +206,7 @@ body {
     color: #fff;
     font-size: 25px;
     padding: 10px 0;
-    margin: 0 auto;
+    margin: 18px auto;
     border: none;
     border-radius: 25px;
     width: 70%;
@@ -198,5 +215,5 @@ body {
 }
 
 .Adquirir:hover {
-    background-color: rgb(255, 167, 255);
+    background-color: rgb(201, 1, 201);
 }
