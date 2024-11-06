@@ -2,7 +2,7 @@
 
 
 #### Descrição das Pastas e Arquivos
-
+##MODELO MVC##
 ### /assets
 Contém todos os arquivos estáticos, como CSS, JavaScript, imagens e fontes.
 
