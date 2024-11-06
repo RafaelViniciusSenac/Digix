@@ -7,10 +7,11 @@ botaoProdutos.addEventListener("click", function(){
     document.body.style.overflow = "hidden";
 })
 
-function fecharCard(i, n){
-}
-
 fecharX.addEventListener("click", function(){
     dialog.close();
     document.body.style.overflow = ""
 })
+
+
+
+

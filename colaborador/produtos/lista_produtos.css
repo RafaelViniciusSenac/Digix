@@ -39,10 +39,17 @@ body {
     font-size: 25px;
 }
 
-.busca {
+/* .busca {
     width: 40px;
     height: 40px;
     padding-left: 10px;
+} */
+
+#lupa {
+    width: 40px;
+    padding-left: 10px;
+    font-size: 25px;
+    color: var(--laranja);
 }
 
 .searchBar:focus {
