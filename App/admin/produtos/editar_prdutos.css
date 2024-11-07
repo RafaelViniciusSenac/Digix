@@ -1,0 +1,164 @@
+
+dialog {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgb(44, 0, 106); 
+    width: 1025px;
+    height: 640px;
+    color: #FFFFFF;
+}
+
+.ModalContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: -20px;
+}
+
+.headerLogo > img {
+    width: 200px;
+}
+
+header .buttonClose {
+    background-color: transparent;
+    border: none;
+    margin-top: 18px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#produtoForm {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 30px; 
+    padding-left: 35px;
+    padding-right: 35px;
+    box-sizing: border-box;
+}
+
+form .LadoEsquerdo, form .LadoDireito {
+    width: 48%; 
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    margin: 0; 
+}
+
+.FormProduto > label, .FormQuantidade > label, .FormPreco > label, .FormImagem > label {
+    margin-bottom: 10px; 
+    font-size: 25px;
+}
+
+.FormProduto, .FormQuantidade, .FormPreco {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    
+}
+
+.FormProduto > input, .FormQuantidade > input, .FormPreco > input {
+    height: 50px;
+    width: 95%;
+}
+
+.FormProduto > input:hover, .FormQuantidade > input:hover, .FormPreco > input:hover {
+    background-color: #ececec;
+}
+
+.FormTipo > div {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.FormTipo > label{
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    accent-color: rgb(252, 103, 29); 
+    margin-left: 15px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.produtoFormBotao {
+    width: 100%;
+    margin-top: 80px;
+    text-align: end;
+}
+
+.buttonAlterar {
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    height: 55px;   
+    background-color: rgb(211, 74, 244);
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;   
+}
+
+.buttonAlterar:hover {
+    background-color: rgba(210, 74, 244, 0.8);
+}
+
+.LadoEsquerdo .alerta {
+    color: red;
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.LadoEsquerdo .alerta .error {
+    visibility: visible;
+}
+
+.UploadBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    margin-top: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    color: #666;
+    text-align: center;
+}
+
+.UploadBox:hover {
+    background-color: #ececec;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#Produto, #Quantidade, #Preco {
+    padding-left: 10px; 
+    font-size: 16px;
+}
+
+#Campanha{
+    width: 250px;
+    height: 23px;
+    font-size: 16px;
+    
+}
+
+.FormTipoOpçoes{
+    display: flex;
+}
+

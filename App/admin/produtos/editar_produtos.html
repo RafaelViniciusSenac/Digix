@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="editar_prdutos.css">
+</head>
+<body>
+    <button class="buttonOpen">remover Produto</button>
+    <dialog>
+        <div class="ModalContainer">
+            <header>
+                <div class="headerLogo">
+                    <img src="./logo (1) 2.png" alt="LOGO">
+                </div>
+                <div class="headerBotao">
+                    <button type="button" class="buttonClose">
+                        <img src="./botaoClose.png" alt="botãoClose" class="buttonClose">
+                    </button>
+                </div>
+            </header>
+            <form id="produtoForm">
+                <div class="LadoEsquerdo">
+                    <div class="FormProduto">
+                        <label for="Produto">Nome do Produto:</label>
+                        <input type="text" id="Produto" placeholder="Produto">
+                        <small class="alerta">Mensagem de erro</small>
+                    </div>
+                    <div class="FormQuantidade">
+                        <label for="Quantidade">Quantidade:</label>
+                        <input type="number" id="Quantidade" placeholder="Quantidade">
+                        <small class="alerta">Mensagem de erro</small>
+                    </div>
+                    <div class="FormPreco">
+                        <label for="Preco">Preço:</label>
+                        <input type="text" id="Preco" placeholder="R$ 99,99">
+                        <small class="alerta">Mensagem de erro</small>
+                    </div>
+                    <div class="FormTipo">
+                        <div><label>Selecione "tipo" da Campanha:</label></div>
+                        <div class="FormTipoOpçoes">
+                            <input type="text" id="Campanha" list="ListCampanha">
+                            <datalist id="ListCampanha">
+                                <option value="Padrão">
+                                <!-- Janeiro -->
+                                <option value="Ano Novo">
+                                <option value="Dia de Reis">
+                            
+                                <!-- Fevereiro/Março -->
+                                <option value="Carnaval">
+                                <option value="Quarta-feira de Cinzas">
+                            
+                                <!-- Março -->
+                                <option value="Dia Internacional da Mulher">
+                            
+                                <!-- Março/Abril -->
+                                <option value="Sexta-feira Santa">
+                                <option value="Páscoa">
+                            
+                                <!-- Abril -->
+                                <option value="Dia de Tiradentes">
+                                
+                                <!-- Maio -->
+                                <option value="Dia do Trabalho">
+                                <option value="Dia das Mães">
+                            
+                                <!-- Junho -->
+                                <option value="Dia dos Namorados">
+                                <option value="Corpus Christi">
+                                <option value="Dia de Santo Antônio">
+                                <option value="Dia de São João">
+                                <option value="Dia de São Pedro">
+                            
+                                <!-- Julho -->
+                                <option value="Dia dos Avós">
+                            
+                                <!-- Agosto -->
+                                <option value="Dia do Estudante">
+                                <option value="Dia dos Pais">
+                            
+                                <!-- Setembro -->
+                                <option value="Independência do Brasil">
+                            
+                                <!-- Outubro -->
+                                <option value="Nossa Senhora Aparecida (Dia das Crianças)">
+                                <option value="Dia do Professor">
+                            
+                                <!-- Novembro -->
+                                <option value="Dia de Finados">
+                                <option value="Proclamação da República">
+                                <option value="Dia da Consciência Negra">
+                            
+                                <!-- Dezembro -->
+                                <option value="Natal">
+                                <option value="Véspera de Ano Novo">
+                            </datalist>
+                            
+                                
+                            <input type="checkbox" id="Fisico">
+                            <label for="Fisico">Fisico</label>
+                            <input type="checkbox" id="Virtual">
+                            <label for="Virtual">Virtual</label>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="LadoDireito">
+                    <div class="FormImagem">
+                        <label>Faça o upload da imagem do produto:</label>
+                        <label for="imagem" class="UploadBox">
+                            <img src="./uploadIcon.png" alt="uploadIcon">
+                            <p>Arraste e solte o arquivo de imagem aqui para realizar upload</p>
+                            <small>JPEG - PNG - WEBP</small>
+                        </label>
+                        <input type="file" id="imagem" accept="image/jpeg, image/png, image/gif">
+                        <div class="produtoFormBotao">
+                            <button type="submit" form="produtoForm" class="buttonAlterar">Alterar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="editar_produtos.js"></script>
+</body>
+</html>
