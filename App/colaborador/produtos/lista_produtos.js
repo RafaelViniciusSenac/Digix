@@ -1,6 +1,6 @@
 const botaoProdutos = document.getElementById("imgbotao")
 const fecharX = document.getElementById("fechar")
-const dialog = document.getElementById("cardProdutos")
+const dialog = document.getElementById("cardFront")
 
 botaoProdutos.addEventListener("click", function(){
     dialog.showModal();
