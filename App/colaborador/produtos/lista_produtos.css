@@ -59,7 +59,6 @@ body {
 .produtos {
     margin: 0 auto;
     padding-top: 70px;
-
 }
 
 .produtosDigix {
@@ -76,7 +75,9 @@ body {
     border: 2px var(--laranja) solid;
 }
 
-.imagensDigix {
+.imagensDigix,
+.produtosEmGeral,
+.imagensCampanha {
     display: grid;
     grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(2, 250px);
@@ -85,23 +86,6 @@ body {
     margin-top: 40px;
 }
 
-.imagensCampanha {
-    display: grid;
-    grid-template-columns: repeat(4, 250px);
-    grid-template-rows: repeat(1, 250px);
-    gap: 60px;
-    margin-bottom: 50px;
-    margin-top: 40px;
-}
-
-.produtosEmGeral {
-    display: grid;
-    grid-template-columns: repeat(4, 250px);
-    grid-template-rows: repeat(1, 250px);
-    gap: 60px;
-    margin-bottom: 50px;
-    margin-top: 40px;
-}
 
 .imgD {
     display: flex;
@@ -245,7 +229,7 @@ dialog::backdrop {
 }
 
 #cardBack .quantidade {
-    display: flex;    
+    display: flex;
     padding-left: 30px;
 }
 
@@ -254,9 +238,9 @@ dialog::backdrop {
 }
 
 #cardBack .descricao {
-    display: flex;    
-    padding: 30px; 
-    margin-bottom: 120px;   
+    display: flex;
+    padding: 30px;
+    margin-bottom: 120px;
 }
 
 #refresh {
@@ -264,7 +248,7 @@ dialog::backdrop {
 }
 
 #cardBack .quantidade p {
-    font-weight: bold;    
+    font-weight: bold;
     color: var(--laranja);
 }
 
@@ -273,3 +257,48 @@ dialog::backdrop {
     color: var(--laranja);
 }
 
+@media (max-width: 768px) {
+
+    .imagensDigix,
+    .imagensCampanha,
+    .produtosEmGeral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produtosDigix {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProdBarra {
+        display: block;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 100px;
+        margin-bottom: 20px;
+
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+        width: 370px;
+        margin: 0 70px 0 70px;
+    }
+
+    dialog {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: none;
+        padding: 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+
+    }
+
+}
