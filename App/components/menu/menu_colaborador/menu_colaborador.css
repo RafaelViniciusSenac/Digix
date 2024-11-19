@@ -14,14 +14,14 @@
     
 }
 
-a{
+.buttonNavBar{
     text-decoration: none;
     color: black;
     font-weight: 600;
-    transition-duration: 0.4s;
 }
 
-a:hover{
+
+.buttonNavBar:hover{
     color: #fc671d
 }
 
@@ -88,5 +88,48 @@ a:hover{
 
 .flechaCima:hover{
     cursor: pointer;
+}
+
+.dropMenu{
+    position: absolute;
+    margin-top: 310px;
+    
+}
+
+.dropMenuConteudo{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(44, 0, 106, 1);
+    border-radius: 5px;
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    
+}
+
+
+.itemMenu{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.itemMenu img{
+    width: 28px;
+    height: 28px;
+    
+}
+
+.itemMenu a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    margin-left: 30px;
+}
+
+.itemMenu a:hover{
+    color: #fc671d;
+    transition: 0.5s;
 }
 
