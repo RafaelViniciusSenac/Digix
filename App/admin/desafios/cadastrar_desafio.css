@@ -1,0 +1,73 @@
+
+:root {
+    --laranja: #FC671D;
+    --magenta: #D34AF4;/* cor do botão */
+    --cinza: #faf6f7;
+    --cinza-escuro:#888;
+    --ciano: #0BC0D3;
+    --base: #2c006a;
+    --branco: #fff;
+    --preto: #000;
+    --roxo: #4D2C87;  /* fundo roxo */
+    --sombra-base:rgba(44, 0, 106, 0.4);
+    --sombra-preta:rgba(0, 0, 0, 0.4);
+    --cinzaPlaceHolder:#9E9E9E;
+  }
+  
+
+
+
+body{
+    background: var(--roxo);
+    
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconeX{
+    width: 32px;
+    height: 32px;
+}
+
+
+
+.nomeDesafioDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.valorDesafioDiv{   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nomeDesafioDiv input{
+    border-radius: 10px;
+    border: none;
+    width: 558px;
+    height: 55px;   
+    background-color: var(--branco);
+    font-size: 20px;
+    color: var(--base);
+
+}
+
+
+label{
+    color: var(--branco);
+}
+
+.nomeDesafioDiv input::placeholder{
+    color: var(--cinzaPlaceHolder);
+}
+
+
+
+
+
