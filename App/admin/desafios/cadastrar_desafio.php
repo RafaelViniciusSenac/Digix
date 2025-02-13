@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="cadastrar_desafio.css">
 </head>
 <body>
-    <div>
+    <div class="logo">
         <img src="../../components/menu/imagens/logoAdmin.png" alt="LogoAdmin">
         <img class="iconeX" src="../../components/menu/imagens/iconeX.png" alt="">
     </div>
@@ -25,9 +25,11 @@
             <input type="text" name="valorDesafio" id="valorDesafio" class="valorDesafio" placeholder="valor do desafio">
         </div>
 
-        <input type="checkbox" name="statusDesafio" id="statusDesafio">
-        <span>Campanha</span>
-
+        <div class="statusDesafioDiv">
+            <input class="statusDesafio" name="statusDesafio" type="checkbox">
+            <span>Campanha</span>
+        </div>
+        
         <div>
             <label for="">Inicio</label>
             <input type="date" name="inicioDesafio" id="inicioDesafio">
