@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="cadastrar_desafio.css">
 </head>
 <body>
-    <div class="logo">
+    
+    <div class="header">
         <img src="../../components/menu/imagens/logoAdmin.png" alt="LogoAdmin">
-        <img class="iconeX" src="../../components/menu/imagens/iconeX.png" alt="">
+        <div class="botao">
+            <button type="submit" class="cadastrarDesafio">Concluído</button>
+            <img class="iconeX" src="../../components/menu/imagens/iconeX.png" alt="">
+        </div>
     </div>
-    <button type="submit" class="cadastrarDesafio">Cadastrar Desafio</button>
 
     <form method="POST" action="">
 
@@ -30,15 +33,20 @@
             <span>Campanha</span>
         </div>
         
-        <div>
-            <label for="">Inicio</label>
-            <input type="date" name="inicioDesafio" id="inicioDesafio">
-    
-            <label for="">Fim</label>
-            <input type="date" name="fimDesafio" id="fimDesafio">
-        </div>
+        <div class="dataDesafioDiv"> 
+
+            <div class="dataDesafioInterno">
+                <label class="dataDesafio" for="">Inicio</label>
+                <input type="date" name="inicioDesafio" id="inicioDesafio">
+            </div>
+            <div class="dataDesafioInterno">
+                <label class="dataDesafio"  for="">Fim</label>
+                <input type="date" name="fimDesafio" id="fimDesafio">
+            </div>
+           
+        </div> 
     </form>
-
-
+    
+   
 </body>
 </html>

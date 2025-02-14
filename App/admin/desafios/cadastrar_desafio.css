@@ -12,31 +12,53 @@
     --sombra-base:rgba(44, 0, 106, 0.4);
     --sombra-preta:rgba(0, 0, 0, 0.4);
     --cinzaPlaceHolder:#9E9E9E;
+    --cinzaDatas: #D9D9D9;
   }
-  
-
 
 
 body{
-    background: var(--roxo);
-    
+      background: var(--roxo);
+      margin: 0px 100px;
 }
 
-.logo{
+.header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 100px;
+  }
+
+.botao{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .iconeX{
+    
     width: 32px;
     height: 32px;
 }
 
-span{
-    font-size: 15px;
+
+
+.cadastrarDesafio{
+    
+    font-size: 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
     color: var(--branco);
+    background-color: var(--magenta);
+    width: 260px;
+    height: 60px;
+    margin-right: 25px;
     
 }
+
 
 .nomeDesafioDiv{
     display: flex;
@@ -45,19 +67,29 @@ span{
 }
 
 .nomeDesafioDiv input{
-    border-radius: 10px;
+
+    border-radius: 4px;
     border: none;
     width: 558px;
     height: 55px;   
     background-color: var(--branco);
     font-size: 20px;
     color: var(--base);
+    margin-bottom: 40px;
 
 }
 
 
+span{
+    font-size: 15px;
+    color: var(--branco);
+    
+}
+
 label{
     color: var(--branco);
+    font-size: 15px;
+    margin-bottom: 15px;
 }
 
 .nomeDesafioDiv input::placeholder{
@@ -66,6 +98,14 @@ label{
     padding-left: 20px;
 }
 
+.statusDesafioDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
 
 .statusDesafio{
 
@@ -80,26 +120,30 @@ label{
     
  
 }
-
 .statusDesafio:checked{
 
     background-color: var(--laranja);
   
 }
 
-.statusDesafioDiv {
+
+.dataDesafioDiv{
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    gap: 25px;
 }
 
+.dataDesafioInterno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
 
-
-
-    
-
-
-
-
+.dataDesafioInterno input{
+    height: 35px;
+    width: 95px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--cinzaDatas);
+   
+}
