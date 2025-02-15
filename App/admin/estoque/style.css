@@ -57,7 +57,7 @@ body{
 }
 
 .borda{
-    width: 25px;
+    width: 27px;
     height: 2px;
     border-bottom: 2px solid var(--laranja);
     /* border: solid #D34AF4; */
@@ -96,11 +96,14 @@ table {
 
 th img{
     width: 16px;
+    height: 16px;
     margin-right: 5px;
+    margin-left: 3px;
     vertical-align: middle;
     margin-bottom: 1px;
 }
-th, td {
+
+th, td{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
@@ -172,10 +175,31 @@ td input {
 }
 
 img{
-  width: 20px;
+
   margin-right: 10px;
-  
 }
+
+td {
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+td img {
+  display: inline-block;  
+  vertical-align: middle; 
+  margin-right: 10px; 
+  height: 26px;
+  width: 25px;
+}
+
+td span {
+  display: inline-block; 
+  vertical-align: middle; 
+}
+
+
+
+
+
   
 @media screen and (max-width: 600px) {
   table {
