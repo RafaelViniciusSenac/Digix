@@ -17,7 +17,8 @@ CREATE TABLE usuario(
 CREATE TABLE campanha(
 	idCampanha int not null auto_increment primary key,
 	nome varchar(30),
-    estado int default 1
+    estado enum('ativo','inativo') default "ativo",
+    descricao text default null
 );
 
 CREATE TABLE produto(
@@ -31,7 +32,7 @@ CREATE TABLE produto(
     tipo enum('fisico','virtual'),
     idCampanha int default null,
 	foreign key (idCampanha) references campanha(idCampanha),
-	estado int default 1
+	estado enum('ativo','inativo') default "ativo"
     
 );
 
@@ -45,7 +46,7 @@ CREATE TABLE desafio(
     campanha int default 0,
     dataInicio date default null,
     dataFim date default null,
-    estado int default 1
+    estado enum('ativo','inativo') default "ativo"
 );
 
 CREATE TABLE compra(
@@ -115,15 +116,15 @@ INSERT INTO campanha (nome, estado) VALUES
 
 -- Inserir produtos
 INSERT INTO produto (nome, imagem1, imagem2, imagem3, valor, quantidade, tipo, idCampanha, estado) VALUES
-('Camiseta Masculina', 'camiseta1.jpg', 'camiseta2.jpg', 'camiseta3.jpg', 100, 50, 'fisico', 1, 1),
-('Curso de Python', 'curso_python1.jpg', 'curso_python2.jpg', NULL, 200, 30, 'virtual', 2, 1),
-('Assinatura Premium', 'premium1.jpg', NULL, NULL, 300, 100, 'virtual', NULL, 1);
+('Camiseta Masculina', 'camiseta1.jpg', 'camiseta2.jpg', 'camiseta3.jpg', 100, 50, 'fisico', 1, 'ativo'),
+('Curso de Python', 'curso_python1.jpg', 'curso_python2.jpg', NULL, 200, 30, 'virtual', 2, 'ativo'),
+('Assinatura Premium', 'premium1.jpg', NULL, NULL, 300, 100, 'virtual', NULL, 'ativo');
 
 -- Inserir desafios
 INSERT INTO desafio (nome, valor, campanha, dataInicio, dataFim, estado) VALUES
-('Desafio da Semana - Corrida', 50, 1, '2025-02-01', '2025-02-10', 1),
-('Desafio de Leitura', 30, 2, '2025-02-05', '2025-02-20', 1),
-('Desafio do Mês - Programação', 100, 0, '2025-02-10', '2025-02-28', 1);
+('Desafio da Semana - Corrida', 50, 1, '2025-02-01', '2025-02-10', 'ativo'),
+('Desafio de Leitura', 30, 2, '2025-02-05', '2025-02-20', 'ativo'),
+('Desafio do Mês - Programação', 100, 0, '2025-02-10', '2025-02-28', 'ativo');
 
 -- Inserir compras
 INSERT INTO compra (idUsuario, total, entrega, cep, cidade, estado, pedido) VALUES
