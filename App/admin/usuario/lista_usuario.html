@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <link rel="stylesheet" href="lista_usuario.css">
+    <link rel="stylesheet" href="/App/components/menu/menu_admin/menu_admin.css">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <div class="container">
+        <div id="menu_admin"></div>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="user-profile">
+                    <span class="user-avatar">👤</span>
+                    <span class="user-name">FULANO - ADM</span>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content-header">
+                    <h1>Usuários</h1>
+                    <div class="actions">
+                        <div class="search-box">
+                            <input type="search" placeholder="Pesquisar usuário">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="document.getElementById('addCoinsModal').style.display='flex'">
+                            <span class="icon">➕</span>
+                            Adicionar moedas
+                        </button>
+                        <button class="btn btn-secondary" onclick="document.getElementById('addUserModal').style.display='flex'">
+                            <span class="icon">➕</span>
+                            Adicionar usuário
+                        </button>
+                    </div>
+                </div>
+
+                <div class="user-list">
+                    <div class="user-item">
+                        <input type="checkbox">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Fulano Junior Pereira</span>
+                        <span class="user-status inactive">Desativado</span>
+                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
+                    </div>
+                    <div class="user-item">
+                        <input type="checkbox">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Fulano Machado</span>
+                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
+                    </div>
+                    <div class="user-item">
+                        <input type="checkbox">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Fulana Almeida</span>
+                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
+                    </div>
+                    <div class="user-item">
+                        <input type="checkbox">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Fulana Xavier</span>
+                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
+                    </div>
+                    <div class="user-item">
+                        <input type="checkbox">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Fulano Junior</span>
+                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Add User Modal -->
+        <div id="addUserModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://placehold.co/150x60/8b5cf6/ffffff.svg?text=DIGIX" alt="Digix Logo" class="modal-logo">
+                    <button class="close-btn" onclick="document.getElementById('addUserModal').style.display='none'">✕</button>
+                </div>
+                <form class="add-user-form">
+                    <div class="form-group">
+                        <label for="userName">Nome do Usuário</label>
+                        <input type="text" id="userName" placeholder="Fulano Junior Pereira">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" placeholder="fulanin_mec_de_xj6@hotmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="userRA">RA do Usuário</label>
+                        <input type="text" id="userRA" placeholder="23317444">
+                    </div>
+                    <div class="form-group">
+                        <label for="tempPassword">Senha temporária</label>
+                        <input type="text" id="tempPassword" placeholder="Rw9!K$2@qPb">
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Concluído</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit User Modal -->
+        <div id="editUserModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://placehold.co/150x60/8b5cf6/ffffff.svg?text=DIGIX" alt="Digix Logo" class="modal-logo">
+                    <button class="close-btn" onclick="document.getElementById('editUserModal').style.display='none'">✕</button>
+                </div>
+                <form class="edit-user-form">
+                    <div class="form-group">
+                        <label for="editUserName">Nome do Usuário</label>
+                        <input type="text" id="editUserName" value="Fulano Junior Pereira" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="editUserEmail">Email</label>
+                        <input type="email" id="editUserEmail" value="fulanin_mec_de_xj6@hotmail.com" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="editUserRA">RA do Usuário</label>
+                        <input type="text" id="editUserRA" value="23317444" readonly>
+                    </div>
+                    <div class="form-group balance-control">
+                        <label>Gerenciar saldo</label>
+                        <div class="balance-input">
+                            <button type="button" class="balance-btn decrease">-</button>
+                            <input type="number" value="56000" class="balance-value">
+                            <button type="button" class="balance-btn increase">+</button>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button type="button" class="btn btn-danger">Desativar usuário</button>
+                        <button type="button" class="btn btn-success">Ativar usuário</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Concluído</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Add Coins Modal -->
+        <div id="addCoinsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://placehold.co/150x60/8b5cf6/ffffff.svg?text=DIGIX" alt="Digix Logo" class="modal-logo">
+                    <button class="close-btn" onclick="document.getElementById('addCoinsModal').style.display='none'">✕</button>
+                </div>
+                <form class="coins-form">
+                    <h2 class="modal-title">Gerenciar digicoins</h2>
+                    <div class="form-group">
+                        <label for="coinsAmount">Quantidade a ser adicionada</label>
+                        <input type="number" id="coinsAmount" placeholder="5.000" class="coins-input">
+                    </div>
+                    <div class="coins-actions">
+                        <button type="button" class="btn btn-primary">Adicionar</button>
+                        <button type="button" class="btn btn-secondary">Remover</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="lista_usuario.js"></script>
+</html>
