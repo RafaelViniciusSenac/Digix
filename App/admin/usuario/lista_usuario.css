@@ -10,13 +10,13 @@
     --gray-300: #d1d5db;
     --gray-400: #9ca3af;
     --gray-500: #6b7280;
-    --danger: #ef4444;
-    --success: #10b981;
+    --danger: #F44AB0;
+    --success: #0BC0D3;
 }
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 0;
     box-sizing: border-box;
 }
 
@@ -109,7 +109,7 @@ body {
 }
 
 .content {
-    padding: 2rem;
+    padding: 3rem 3rem 3rem 25rem;
     flex: 1;
 }
 
@@ -164,7 +164,12 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary-addcoin{
+    background-color: var(--success);
     color: var(--white);
 }
 
@@ -208,8 +213,9 @@ body {
 .user-item input[type="checkbox"] {
     width: 1.25rem;
     height: 1.25rem;
+    background-color: var(--primary-color);
     border-radius: 0.25rem;
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--secondary-color);
 }
 
 .user-avatar {
