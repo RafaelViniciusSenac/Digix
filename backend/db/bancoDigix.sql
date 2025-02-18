@@ -7,7 +7,7 @@ CREATE TABLE usuario(
 	nome varchar(100) not null,
     email varchar(100) not null,
     ra varchar(20) not null,
-    senha varchar(20) not null,
+    senha TEXT not null,
     saldo int default 0,
     estado enum('ativo','inativo') default "ativo",
     cargo enum('adm','usuario') not null
@@ -18,6 +18,8 @@ CREATE TABLE campanha(
 	idCampanha int not null auto_increment primary key,
 	nome varchar(30),
     estado enum('ativo','inativo') default "ativo",
+    dataInicio date default null,
+    dataFim date default null,
     descricao text default null
 );
 
@@ -43,7 +45,8 @@ CREATE TABLE desafio(
 	idDesafio int not null auto_increment primary key,
     nome varchar(100) not null,
     valor int not null,
-    campanha int default 0,
+    idCampanha int default 0,
+    foreign key (idCampanha) references campanha(idCampanha),
     dataInicio date default null,
     dataFim date default null,
     estado enum('ativo','inativo') default "ativo"
