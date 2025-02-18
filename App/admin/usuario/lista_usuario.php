@@ -11,12 +11,12 @@ $usuarios = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lista_usuario.css">
-    <link rel="stylesheet" href="/App/components/menu/menu_admin/menu_admin.css">
+    <link rel="stylesheet" href="../../components/menu/menu_admin/menu_admin.css">
     <title>Lista de Usuários</title>
 </head>
 <body>
     <div class="container">
-        <?php include '/App/components/menu/menu_admin/menu_admin.html'; ?> <!-- Inclui o menu administrativo -->
+        <?php include("../../components/menu/menu_admin/menu_admin.html");; ?> <!-- Inclui o menu administrativo -->
 
         <main class="main-content">
             <header class="top-bar">
@@ -66,7 +66,7 @@ $usuarios = [
         <div id="addUserModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
+                    <img src="../../components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
                     <button class="close-btn" onclick="closeModal('addUserModal')">✕</button>
                 </div>
                 <form action="processar_formulario.php" method="POST" class="add-user-form">
@@ -95,7 +95,7 @@ $usuarios = [
         <div id="editUserModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
+                    <img src="../../components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
                     <button class="close-btn" onclick="closeModal('editUserModal')">✕</button>
                 </div>
                 <form action="processar_formulario.php" method="POST" class="edit-user-form">
@@ -132,7 +132,7 @@ $usuarios = [
         <div id="addCoinsModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
+                    <img src="../../components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
                     <button class="close-btn" onclick="closeModal('addCoinsModal')">✕</button>
                 </div>
                 <form action="processar_formulario.php" method="POST" class="coins-form">
