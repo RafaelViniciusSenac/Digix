@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=], initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lista_usuario.css">
     <link rel="stylesheet" href="/App/components/menu/menu_admin/menu_admin.css">
-    <title>Lista de Usuarios</title>
+    <title>Lista de Usuários</title>
 </head>
 <body>
     <div class="container">
@@ -27,11 +27,11 @@
                             <input type="search" placeholder="Pesquisar usuário">
                             <span class="search-icon">🔍</span>
                         </div>
-                        <button class="btn btn-primary-addcoin" onclick="document.getElementById('addCoinsModal').style.display='flex'">
+                        <button class="btn btn-primary-addcoin" onclick="openModal('addCoinsModal')">
                             <span class="icon">➕</span>
                             Adicionar moedas
                         </button>
-                        <button class="btn btn-secondary" onclick="document.getElementById('addUserModal').style.display='flex'">
+                        <button class="btn btn-secondary" onclick="openModal('addUserModal')">
                             <span class="icon">➕</span>
                             Adicionar usuário
                         </button>
@@ -39,95 +39,65 @@
                 </div>
 
                 <div class="user-list">
-                    <div class="user-item">
-                        <input type="checkbox">
-                        <span class="user-avatar">👤</span>
-                        <span class="user-name">Fulano Junior Pereira</span>
-                        <span class="user-status inactive">Desativado</span>
-                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
-                    </div>
-                    <div class="user-item">
-                        <input type="checkbox">
-                        <span class="user-avatar">👤</span>
-                        <span class="user-name">Fulano Machado</span>
-                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
-                    </div>
-                    <div class="user-item">
-                        <input type="checkbox">
-                        <span class="user-avatar">👤</span>
-                        <span class="user-name">Fulana Almeida</span>
-                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
-                    </div>
-                    <div class="user-item">
-                        <input type="checkbox">
-                        <span class="user-avatar">👤</span>
-                        <span class="user-name">Fulana Xavier</span>
-                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
-                    </div>
-                    <div class="user-item">
-                        <input type="checkbox">
-                        <span class="user-avatar">👤</span>
-                        <span class="user-name">Fulano Junior</span>
-                        <button class="edit-btn" onclick="document.getElementById('editUserModal').style.display='flex'">✏️</button>
-                    </div>
+                    <!-- Lista de usuários será preenchida dinamicamente -->
                 </div>
             </div>
         </main>
 
-        <!-- Add User Modal -->
+        <!-- Modal Adicionar Usuário -->
         <div id="addUserModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
-                    <button class="close-btn" onclick="document.getElementById('addUserModal').style.display='none'">✕</button>
+                    <button class="close-btn" onclick="closeModal('addUserModal')">✕</button>
                 </div>
                 <form class="add-user-form">
                     <div class="form-group">
                         <label for="userName">Nome do Usuário</label>
-                        <input type="text" id="userName" placeholder="Fulano Junior Pereira">
+                        <input type="text" id="userName" placeholder="Nome de Usuário">
                     </div>
                     <div class="form-group">
                         <label for="userEmail">Email</label>
-                        <input type="email" id="userEmail" placeholder="fulanin_mec_de_xj6@hotmail.com">
+                        <input type="email" id="userEmail" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="userRA">RA do Usuário</label>
-                        <input type="text" id="userRA" placeholder="23317444">
+                        <input type="text" id="userRA" placeholder="Número RA">
                     </div>
                     <div class="form-group">
                         <label for="tempPassword">Senha temporária</label>
-                        <input type="text" id="tempPassword" placeholder="Rw9!K$2@qPb">
+                        <input type="text" id="tempPassword" placeholder="Senha">
                     </div>
                     <button type="submit" class="btn btn-primary submit-btn">Concluído</button>
                 </form>
             </div>
         </div>
 
-        <!-- Edit User Modal -->
+        <!-- Modal Editar Usuário -->
         <div id="editUserModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
-                    <button class="close-btn" onclick="document.getElementById('editUserModal').style.display='none'">✕</button>
+                    <button class="close-btn" onclick="closeModal('editUserModal')">✕</button>
                 </div>
                 <form class="edit-user-form">
                     <div class="form-group">
                         <label for="editUserName">Nome do Usuário</label>
-                        <input type="text" id="editUserName" value="Fulano Junior Pereira" readonly>
+                        <input type="text" id="editUserName">
                     </div>
                     <div class="form-group">
                         <label for="editUserEmail">Email</label>
-                        <input type="email" id="editUserEmail" value="fulanin_mec_de_xj6@hotmail.com" readonly>
+                        <input type="email" id="editUserEmail">
                     </div>
                     <div class="form-group">
                         <label for="editUserRA">RA do Usuário</label>
-                        <input type="text" id="editUserRA" value="23317444" readonly>
+                        <input type="text" id="editUserRA">
                     </div>
                     <div class="form-group balance-control">
                         <label>Gerenciar saldo</label>
                         <div class="balance-input">
                             <button type="button" class="balance-btn decrease">-</button>
-                            <input type="number" value="56000" class="balance-value">
+                            <input type="number" value="0" class="balance-value">
                             <button type="button" class="balance-btn increase">+</button>
                         </div>
                     </div>
@@ -140,12 +110,12 @@
             </div>
         </div>
 
-        <!-- Add Coins Modal -->
+        <!-- Modal Adicionar Moedas -->
         <div id="addCoinsModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="https://placehold.co/150x60/8b5cf6/ffffff.svg?text=DIGIX" alt="Digix Logo" class="modal-logo">
-                    <button class="close-btn" onclick="document.getElementById('addCoinsModal').style.display='none'">✕</button>
+                    <img src="/App/components/menu/imagens/logoAdmin.png" alt="Digix Logo" class="modal-logo">
+                    <button class="close-btn" onclick="closeModal('addCoinsModal')">✕</button>
                 </div>
                 <form class="coins-form">
                     <h2 class="modal-title">Gerenciar digicoins</h2>
@@ -161,6 +131,7 @@
             </div>
         </div>
     </div>
+
+    <script src="lista_usuario.js"></script>
 </body>
-<script src="lista_usuario.js"></script>
 </html>
