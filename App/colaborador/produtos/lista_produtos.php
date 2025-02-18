@@ -1,3 +1,38 @@
+<?php
+function ProdutosDigix()
+{
+    $produtos = [
+        'copo.png',
+        'caderno 2.png',
+        'iphone.png'
+
+    ];
+
+    foreach ($produtos as $produto) {
+        echo "<div class='imgD'>
+        <button id='imgbotao' onclick='openModal(\"$produto\")'>
+            <img class='imagensP' src='./img/$produto' alt='IMG'>
+        </button>
+      </div>";
+    }
+}
+function imagensCampanha()
+{
+    $produtos = [
+        'copo.png',
+        'caderno5.png',
+        'caderno 2.png',
+        'caderno 3.png',
+        'image 5.png',
+        'iphone.png'
+    ];
+    foreach ($produtos as $produto) {
+        echo "<div class='imgD'>
+                <button id='imgbotao'><img class='imagensP' src='./img/$produto' alt='IMG'></button>
+              </div>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -28,111 +63,77 @@
                 <input class="searchBar" type="search">
             </div>
         </div>
+
         <div class="imagensDigix">
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/copo.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno5.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 2.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 3.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/image 5.png  " alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/iphone.png" alt="IMG"></button>
-            </div>
+            <?php ProdutosDigix() ?>
         </div>
-        <div class="ProdBarra">
+
+        <!-- <div class="ProdBarra">
             <h1>Produtos Campanha</h1>
             <div class="barra"></div>
         </div>
+
         <div class="imagensCampanha">
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno5.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 3.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno5.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 2.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 1.png" alt="IMG"></button>
-            </div>
-        </div>
-        <div class="ProdBarra">
-            <h1>Produtos em Geral</h1>
-            <div class="barra"></div>
-        </div>
-        <div class="produtosEmGeral">
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno5.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/iphone.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/teclado.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 2.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 1.png" alt="IMG"></button>
-            </div>
-            <div class="imgD">
-                <button id="imgbotao"><img class="imagensP" src="./img/caderno 3.png" alt="IMG"></button>
-            </div>
-        </div>
-        
-
-        <dialog id="cardFront">
-            <div class="topo">
-                <div class="NProduto">Copo Stanley</div>
-                <button id="fechar" class="X">X</button>
-            </div>
-            <div class="imagemCard">
-                <img class="ImProduto" src="./img/copo.png" alt="">
-            </div>
-            <div class="preco">
-                <p>DG$</p>
-                <span>9999</span>
-            </div>
-            <button class="Adquirir">ADQUIRIR</button>
-        </dialog>
-
-        <dialog id="cardBack">
-            <div class="topo">
-                <div class="NProduto">Copo Stanley</div>
-                <button id="fechar" class="X">X</button>
-            </div>
-            <div>
-                <div class="quantidade">
-                    <p>Quantidade:</p>
-                    <span>999</span>
-                </div>
-                <div class="descricao">
-                    <p>Sobre: </p>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolorem.</span> 
-                </div>
-            </div>
-            <i id="refresh" class="fa fa-refresh" aria-hidden="true"></i>
-        </dialog>
-
+            <?php imagensCampanha() ?>
+        </div> -->
     </div>
+
+    <dialog  id="modal">
+        <div class="container">
+            <div class="flip">
+                <div class="frente">
+                    <header>
+                        <div>Copo Stanley</div>
+                        <button>X</button>
+                    </header>
+                    <div>
+                        <img class="aaa" src="./img/copo.png" alt="copo">
+                        <div>
+                            <p>DG$</p>
+                            <span>9999</span>
+                        </div>
+                        <button>adquirir</button>
+                    </div>
+                </div>
+
+                <div class="tras">
+                    <div>
+                        <div>Copo Stanley</div>
+                        <button>X</button>
+                    </div>
+                    <div>
+                        <p>Quantidade: </p>
+                        <span>999</span>
+                    </div>
+                    <div>
+                        <p>Sobre: </p>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolorem.</span>
+                    </div>
+                    <i id="refresh" class="fa fa-refresh" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
 
     <script src="../../components/menu/menu_colaborador/menu_colaborador.js"></script>
-    <script src="./lista_produtos.js"></script>
+    <!-- <script src="./lista_produtos.js"></script> -->
+
+    <script>
+     const updateButton = document.getElementById("imgbotao");
+const confirmButton = document.getElementById("submit");
+const cancelButton = document.getElementById("cancel");
+const dialog = document.getElementById("modal");
+const selectElement = document.getElementById("favAnimal");
+
+// Update button opens a modal dialog
+updateButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+
+    </script>
+
 </body>
 
 </html>
