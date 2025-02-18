@@ -1,3 +1,10 @@
+<?php 
+
+$router = "login";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,15 +23,16 @@
         <div class="logoDigix">
             <img class="logo" src="./App/login/logo 1.png" alt="">
         </div>
-        
-            <div class="inputs">
-                <h3 class="textoTelaBranca">Email</h3>
-                <input class="inputTelaBranca" type="">
-
-                <h3 class="textoTelaBranca">Senha</h3>
-                <input class="inputTelaBranca" type="">
-
-            </div>
+            <form action="./backend/router/loginRouter.php?action=<?php echo $router ?>" method="POST">
+                <div class="inputs">
+                    <h3 class="textoTelaBranca">Email</h3>
+                    <input name="email" class="inputTelaBranca" type="email">
+    
+                    <h3 class="textoTelaBranca">Senha</h3>
+                    <input name="senha" class="inputTelaBranca" type="password">
+    
+                </div>
+            </form>
             <button class="botaoTelaBranca">ENTRAR</button>
 
             <div class="linhaInferior">
