@@ -1,12 +1,21 @@
 <?php 
 
+
+$errorMensage = '';
+if(isset($_GET['erro'])){
+    if($_GET['erro'] == true){
+        $errorMensage = 'Email ou senha incorretos!';
+    }
+
+}
+
 $router = "login";
 
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">

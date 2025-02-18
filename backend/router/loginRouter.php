@@ -10,24 +10,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         case 'login':
             $resultado = $loginController->Login($_POST['email'], $_POST['senha']);
 
-            if($resultado)
-            {
+            if($resultado){
                 header("Location: ./App/colaborador/Home/Home.php");
+            }else{
+                header("Location: ../index.php?erro=true");
             }
-            else
-            {
-                header("Location: index.php");
-            }
-            break;
-            
+            break;          
         default:
-            header("Location: index.php");
+            header("Location: ../index.php");
             break;
     }
 }
-
-
-
-
-
-?>
