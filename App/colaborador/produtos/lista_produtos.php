@@ -98,8 +98,6 @@ function imagensCampanha()
                         <i id="refresh" class="fa fa-refresh" aria-hidden="true"></i>
                     </div>
                 </div>
-
-
                 <div class="tras">
                     <div class="topo">
                         <div class="NProduto">Copo Stanley</div>

@@ -302,7 +302,7 @@ dialog::backdrop {
     height: 500px;
 }
 
-.container:hover .flip{
+.virado{
     transform: rotateY(180deg);
 }
 
@@ -312,7 +312,7 @@ dialog::backdrop {
     height: 100%;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: .5s;
+    transition: .6s;
 }
 
 .frente, .tras {
