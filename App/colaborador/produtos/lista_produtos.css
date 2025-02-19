@@ -66,7 +66,6 @@ body {
 }
 
 .imagensDigix,
-.produtosEmGeral,
 .imagensCampanha {
     display: grid;
     grid-template-columns: repeat(4, 250px);
@@ -75,7 +74,6 @@ body {
     margin-bottom: 50px;
     margin-top: 40px;
 }
-
 
 .imgD {
     display: flex;
@@ -95,7 +93,6 @@ body {
     background: var(--branco);
 }
 
-
 .imgD:hover {
     scale: 1.2;
 }
@@ -110,64 +107,64 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
     border: none;
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
+    padding: 0;
+    
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#cardFront {
+
+.frente {
     text-align: center;
-    width: 500px;
+    width: 550px;
     height: 550px;
     box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.6);
     border-radius: 20px;
 }
 
-#cardFront .NProduto {
-    padding: 10px;
+.frente .NProduto {
     font-size: 25px;
     font-weight: bold;
     color: var(--preto);
 }
 
-#cardFront .imagemCard {
+.frente .imagemCard {
     display: flex;
     justify-content: center;
 }
 
-#cardFront .ImProduto {
-    width: 230px;
-    height: 230px;
-    padding: 50px 0 50px 0;
+.frente .ImProduto {
+    width: 200px;
+    height: 200px;
+    padding: 20px 0 50px 0;
 }
 
-#cardFront .preco {
+.frente .preco {
     display: flex;
     justify-content: center;
     font-size: 30px;
     margin: 5px 0 10px;
 }
 
-#cardFront .preco p {
-    font-weight: bold;
+.frente .preco p {
     padding-right: 10px;
     color: var(--laranja);
 }
 
-#cardFront .preco span {
-    font-weight: bold;
+.frente .preco span {
+    padding-right: 10px;
     color: var(--ciano);
 }
 
-#cardFront .topo {
+.frente .topo {
     display: flex;
     justify-content: space-between;
-    padding: 15px 15px 0 0;
+    padding: 15px;
 }
 
 .topo .X {
@@ -178,7 +175,7 @@ dialog::backdrop {
 }
 
 .topo .X img {
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 
@@ -187,7 +184,7 @@ dialog::backdrop {
     color: #fff;
     font-size: 25px;
     padding: 10px 0;
-    margin: 18px auto;
+    margin: 11px auto;
     border: none;
     border-radius: 25px;
     width: 70%;
@@ -199,16 +196,23 @@ dialog::backdrop {
     background-color: rgb(201, 1, 201);
 }
 
-#cardBack {
+.btn-refresh {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;   
+}
+
+.tras {
     text-align: center;
     width: 500px;
-    height: 550px;
+    height: 500px;
     box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     font-size: 25px;
+    transform: rotateY(180deg);
 }
 
-#cardBack .topo {
+.tras .topo {
     font-size: 25px;
     font-weight: bold;
     display: flex;
@@ -218,31 +222,33 @@ dialog::backdrop {
     font-size: 35px;
 }
 
-#cardBack .quantidade {
+.tras .NProduto {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--preto);
+}
+
+.tras .quantidade {
     display: flex;
     padding-left: 30px;
 }
 
-#cardBack .quantidade span {
+.tras .quantidade span {
     padding-left: 10px;
 }
 
-#cardBack .descricao {
+.tras .descricao {
     display: flex;
     padding: 30px;
-    margin-bottom: 120px;
+    margin-bottom: 90px;
 }
 
-#refresh {
-    font-size: 50px;
-}
-
-#cardBack .quantidade p {
+.tras .quantidade p {
     font-weight: bold;
     color: var(--laranja);
 }
 
-#cardBack .descricao p {
+.tras .descricao p {
     font-weight: bold;
     color: var(--laranja);
 }
@@ -250,8 +256,7 @@ dialog::backdrop {
 @media (max-width: 768px) {
 
     .imagensDigix,
-    .imagensCampanha,
-    .produtosEmGeral {
+    .imagensCampanha {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -289,5 +294,32 @@ dialog::backdrop {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: white;
     }
+}
 
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.container:hover .flip{
+    transform: rotateY(180deg);
+}
+
+.flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.frente, .tras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    backface-visibility: hidden;
 }

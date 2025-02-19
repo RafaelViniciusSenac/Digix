@@ -78,34 +78,38 @@ function imagensCampanha()
         </div> -->
     </div>
 
-    <dialog  id="modal">
+    <dialog id="modal">
         <div class="container">
             <div class="flip">
                 <div class="frente">
-                    <header>
-                        <div>Copo Stanley</div>
-                        <button>X</button>
-                    </header>
-                    <div>
-                        <img class="aaa" src="./img/copo.png" alt="copo">
-                        <div>
-                            <p>DG$</p>
-                            <span>9999</span>
-                        </div>
-                        <button>adquirir</button>
+                    <div class="topo">
+                        <div class="NProduto">Copo Stanley</div>
+                        <button id="fechar" class="X">X</button>
+                    </div>
+                    <div class="imagemCard">
+                        <img class="ImProduto" src="./img/copo.png" alt="copo">
+                    </div>
+                    <div class="preco">
+                        <p>DG$</p>
+                        <span>9999</span>
+                    </div>
+                    <div class="btn-refresh">
+                        <button class="Adquirir">adquirir</button>
+                        <i id="refresh" class="fa fa-refresh" aria-hidden="true"></i>
                     </div>
                 </div>
 
+
                 <div class="tras">
-                    <div>
-                        <div>Copo Stanley</div>
-                        <button>X</button>
+                    <div class="topo">
+                        <div class="NProduto">Copo Stanley</div>
+                        <button id="fechar" class="X">X</button>
                     </div>
-                    <div>
+                    <div class="quantidade">
                         <p>Quantidade: </p>
                         <span>999</span>
                     </div>
-                    <div>
+                    <div class="descricao">
                         <p>Sobre: </p>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolorem.</span>
                     </div>
@@ -115,24 +119,19 @@ function imagensCampanha()
         </div>
     </dialog>
 
+    <script src="./teste.js"></script>
 
-    <script src="../../components/menu/menu_colaborador/menu_colaborador.js"></script>
-    <!-- <script src="./lista_produtos.js"></script> -->
+    <!-- <script>
+        const updateButton = document.getElementById("imgbotao");
+        const confirmButton = document.getElementById("submit");
+        const cancelButton = document.getElementById("cancel");
+        const dialog = document.getElementById("modal");
 
-    <script>
-     const updateButton = document.getElementById("imgbotao");
-const confirmButton = document.getElementById("submit");
-const cancelButton = document.getElementById("cancel");
-const dialog = document.getElementById("modal");
-const selectElement = document.getElementById("favAnimal");
-
-// Update button opens a modal dialog
-updateButton.addEventListener("click", () => {
-  dialog.showModal();
-});
-
-
-    </script>
+        // Update button opens a modal dialog
+        updateButton.addEventListener("click", () => {
+            dialog.showModal();
+        });
+    </script> -->
 
 </body>
 
