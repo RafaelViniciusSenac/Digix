@@ -1,14 +1,14 @@
 *{
     margin: 0;
+
 }
 
 .menuColaborador{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     height: 100px;
-    padding-left: 300px;
-    padding-right: 300px;
+    gap: 150px;
     box-shadow: 10px 4px 8px rgba(0,0,0,0.4);
     background-color: white;
     
