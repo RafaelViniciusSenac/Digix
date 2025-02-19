@@ -13,7 +13,7 @@ class UserController
 
     public function GetAllUser(){
         try {
-            $sql = "SELECT * FROM usuario";
+            $sql = "SELECT * FROM usuario WHERE cargo = 'usuario'";
             $db = $this->conn->prepare($sql);
             $db->execute();
             $user = $db->fetchAll(PDO::FETCH_ASSOC);
@@ -93,6 +93,19 @@ class UserController
             $sql = "SELECT * FROM usuario WHERE idUsuario = :idUsuario";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":idUsuario", $idUsuario);
+            $db->execute();
+            $user = $db->fetch(PDO::FETCH_ASSOC);
+            return $user;
+        } catch (\Exception $th) {
+            //throw $th;
+        }
+    }
+
+    public function GetUserByNome($nome){
+        try {
+            $sql = "SELECT * FROM usuario WHERE nome = :nome";
+            $db = $this->conn->prepare($sql);
+            $db->bindParam(":nome", $nome);
             $db->execute();
             $user = $db->fetch(PDO::FETCH_ASSOC);
             return $user;
