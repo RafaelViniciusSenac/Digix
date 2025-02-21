@@ -101,7 +101,7 @@ function imagensCampanha()
                 <div class="tras">
                     <div class="topo">
                         <div class="NProduto">Copo Stanley</div>
-                        <button id="fechar" class="X">X</button>
+                        <button id="fechar2" class="X">X</button>
                     </div>
                     <div class="quantidade">
                         <p>Quantidade: </p>
@@ -111,7 +111,7 @@ function imagensCampanha()
                         <p>Sobre: </p>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolorem.</span>
                     </div>
-                    <i id="refresh" class="fa fa-refresh" aria-hidden="true"></i>
+                    <i id="refresh2" class="fa fa-refresh" aria-hidden="true"></i>
                 </div>
             </div>
         </div>

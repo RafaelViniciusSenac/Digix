@@ -199,7 +199,12 @@ dialog::backdrop {
 .btn-refresh {
     display: flex;
     flex-direction: column;
-    font-size: 30px;   
+    font-size: 30px;
+}
+
+#refresh, #refresh2{
+    margin: 1px;
+    cursor: pointer;
 }
 
 .tras {
@@ -302,7 +307,10 @@ dialog::backdrop {
     height: 500px;
 }
 
-.virado{
+.virado {
+    transform: rotateY(180deg);
+}
+.virado2{
     transform: rotateY(180deg);
 }
 
@@ -310,9 +318,9 @@ dialog::backdrop {
     position: absolute;
     width: 100%;
     height: 100%;
-    cursor: pointer;
     transform-style: preserve-3d;
     transition: .6s;
+    border: none;
 }
 
 .frente, .tras {
