@@ -110,19 +110,15 @@ dialog {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
-    padding: 0;
-    
+    padding: 0;    
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
 }
-
 
 .frente {
     text-align: center;
-    width: 550px;
-    height: 550px;
     box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.6);
     border-radius: 20px;
 }
