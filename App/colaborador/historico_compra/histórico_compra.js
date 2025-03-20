@@ -39,7 +39,6 @@ function preencherCarrinho(carrinho) {
   cartItemsContainer.innerHTML = ""; // Limpa os itens existentes
 
   let totalCarrinho = 0;
-  let totalItens = 0;
   carrinho.forEach((item) => { // Para cada item no carrinho
     let valor = parseFloat(item.valor); // passa o valor para float
     let qtd = parseInt(item.qtd); // passa a quantidade para int
