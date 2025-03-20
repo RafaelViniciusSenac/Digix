@@ -30,8 +30,7 @@ var car = [ // Simula o carrinho
       qtd: 2,
   }
 ];
-let ascending = true;
-const qtdDigicoins = 10000;//Simula quantidade de digicoins
+
 
 function preencherCarrinho(carrinho) {
   const cartItemsContainer = document.getElementById("cart-items");
