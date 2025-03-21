@@ -152,11 +152,13 @@ dialog::backdrop {
 .frente .preco p {
     padding-right: 10px;
     color: var(--laranja);
+    font-weight: bold;
 }
 
 .frente .preco span {
     padding-right: 10px;
     color: var(--ciano);
+    font-weight: bold;  
 }
 
 .frente .topo {
