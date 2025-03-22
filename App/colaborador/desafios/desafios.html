@@ -4,21 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="desafios.css">
     <link rel="stylesheet" href="../../components/menu/menu_colaborador/menu_colaborador.css"> <!--  css do menu -->
 </head>
 <body>
-    <div id="menuColaborador"></div> <!--  div onde ficará o menu, deve possuir esse nome como id -->
- 
-    <script src="../../components/menu/menu_colaborador/menu_colaborador.js"></script>  <!-- javascript para puxar a div -->
 
-    <div id="central" class="central">
-    <button><img src="../../components/menu/imagens/flechaEsquerda.png"> <h2>voltar</h2></button>
+
+    <!-- Menu do colaborador -->
+    <div id="menuColaborador"></div> <!--  div onde ficará o menu, deve possuir esse nome como id -->
+    <script src="../../components/menu/menu_colaborador/menu_colaborador.js"></script>  <!-- javascript para puxar a div -->
+    <!-- Menu do colaborador -->
+
+
+
     
 
 
 
+    <!-- toda regiao central da pagina -->
+    <div id="central" class="central">
+    
+    <!-- Lista de desafios -->
+    <div class="listaDesafios">
+        
+        <!-- Botao de voltar  -->
+        <button class="voltar"><img src="../../components/menu/imagens/flechaEsquerda.png"> <h2>voltar</h2></button>
+        <!-- Botao de voltar  -->
+
+        <!-- Texto sobre as missoes -->
+        <h2 class= "textDecoratinDesafios"><img src="../../components/menu/imagens/vector.png" alt="" class="vector">Missões de campanha</h2>
+        <div class="line"></div>
+        <!-- Texto sobre as missoes -->
+
+
+        <div class="cabecalhoMissoes">
+            <div class="centralizar"><h3>Nome</h3> <img src="../../components/menu/imagens/sort.png" alt="" class="sort"></div>
+            <div class="centralizar"><h3>Recompensa $</h3></div>
+
+        </div>
+
+        <div class="listaDesafios" id="listaDesafios">
+
+            <ul class="desafios">
+                 <div class="desafiosFlex" id="desafiosFlex"> <!-- fiz isso para poder dar display flex na lista de desafios -->
+                    <div class="alvoCampanha">
+                    <img src="../../components/menu/imagens/alvoCampanha.png" class="alvo">
+                    <li>Desafio1</li>
+                    </div>
+                    <p class="recompensa">DG$200</p>
+                </div>
+
+                <div class="desafiosFlex" id="desafiosFlex" >
+                    <div class="alvoCampanha">
+                        <img src="../../components/menu/imagens/alvoCampanha.png" class="alvo">
+                        <li>Desafio2</li>
+                        </div>
+                </div>
+
+                <div class="desafiosFlex" id="desafiosFlex" >
+                    <div class="alvoCampanha">
+                        <img src="../../components/menu/imagens/alvoCampanha.png" class="alvo">
+                        <li>Desafio3</li>
+                        </div>
+                </div>
+
+                <div class="desafiosFlex" id="desafiosFlex">
+                    <div class="alvoCampanha">
+                        <img src="../../components/menu/imagens/alvoCampanha.png" class="alvo">
+                        <li>Desafio4</li>
+                        </div>
+                </div>
+
+                <div class="desafiosFlex" id="desafiosFlex">
+                    <div class="alvoCampanha">
+                        <img src="../../components/menu/imagens/alvoCampanha.png" class="alvo">
+                        <li>Desafio5</li>
+                        </div>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+    <!-- Lista de desafios -->
 
 
     </div>
+    <!-- toda regiao central da pagina -->
 </body> 
 </html>
